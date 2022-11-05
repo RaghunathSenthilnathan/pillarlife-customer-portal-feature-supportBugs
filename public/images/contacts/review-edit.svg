@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="115" height="45" viewBox="0 0 115 45">
+  <g id="Group_880" data-name="Group 880" transform="translate(-1593 -677)">
+    <g id="Rectangle_510" data-name="Rectangle 510" transform="translate(1593 677)" fill="#fff" stroke="#009dcb" stroke-width="1">
+      <rect width="115" height="45" rx="8" stroke="none"/>
+      <rect x="0.5" y="0.5" width="114" height="44" rx="7.5" fill="none"/>
+    </g>
+    <path id="Icon_material-edit" data-name="Icon material-edit" d="M4.5,23.5v5h5L24.244,13.752l-5-5ZM28.11,9.886a1.328,1.328,0,0,0,0-1.88l-3.12-3.12a1.328,1.328,0,0,0-1.88,0l-2.44,2.44,5,5,2.44-2.44Z" transform="translate(1603.496 683.504)" fill="#009dcb"/>
+    <text id="Edit_" data-name="Edit " transform="translate(1643 708)" fill="#009dcb" font-size="23" font-family="Muli-SemiBold, Muli" font-weight="600" letter-spacing="0.045em"><tspan x="0" y="0">Edit </tspan></text>
+  </g>
+</svg>

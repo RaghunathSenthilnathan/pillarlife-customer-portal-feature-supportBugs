@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "allowSyntheticDefaultImports":true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,    
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["src/pages/*"],
+      "@components/*": ["src/components/*"],
+      "@context/*": ["src/context/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@test-utils/*": ["src/test-utils/*"],
+      "@shared/*": ["shared/*"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    // "**/*.js",
+    // "**/*.jsx",
+    // "postcss.config.js",
+    // "next.config.js"
+  ],
+  "exclude": ["node_modules", "**/node_modules/*", "backend"]
+}

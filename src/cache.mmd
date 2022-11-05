@@ -1,0 +1,38 @@
+sequenceDiagram
+autonumber
+rect rgb(236, 236, 255)  	
+Note right of Browser: First request
+Browser->>Brower Cache: User requested data
+Brower Cache->>API:Cache not found
+API->>Distributed Cache:Check Distributed Cache store
+Distributed Cache-->>API:Cache not found
+API->>Database:Fetch data from database
+Database-->>API: API Response with hash value(eTag)
+API->>Distributed Cache: Response written to Distributed Cache
+API-->>Browser: Response with ETag. Http status code 200
+end
+
+rect rgb(236, 236, 255)  	
+Note right of Browser: Subsequent Request <br>Cache not found in Distributed Cache 
+Browser->>API: Request with If-None-Match Header
+API->>Distributed Cache:Request with If-None-Match Header
+Distributed Cache-->>API:Cache not found
+API->>Database:Fetch data from database
+Database-->>API:Get data from database
+API->>API: Calculate Hash value <br>attach as eTag response Header
+API-->>Browser:Response with ETag
+end
+
+rect rgb(236, 236, 255)  	
+Note right of Browser: Subsequent Request <br>Cache found in Distributed Cache 
+Browser->>API: Request with If-None-Match Header
+API->>API:compare Request Header ETag <br> and If-None-Match 
+alt ETag==If_None-Match
+   API-->>Browser:Response with http status code 304
+else ETag!=If_None-Match
+   API->>Database: Fetch data from database
+   Database->>API: Get data from database
+   API->>API: Calculate Hash value<br> attach as eTag Header
+   API-->>Browser:Response with ETag and Http status code 200
+end
+end

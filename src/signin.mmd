@@ -1,0 +1,8 @@
+sequenceDiagram
+Browser->>Cognito User Pool: Sigin input username/password
+Cognito User Pool-->>Browser: Returns ID Tokens/Access/Refresh tokens
+Browser->>Cognito Identity Pool: Ask for roles
+Cognito Identity Pool-->>Browser: Returns Temporary AWS credentials to <br> Authenticated/Unauthenticated Users
+Browser->>Socotra API: Call an API with Authorization Header
+Socotra API-->>Socotra API: Validate Authorization Header
+Socotra API-->>Browser: Return the response

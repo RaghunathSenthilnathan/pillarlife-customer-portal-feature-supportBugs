@@ -1,0 +1,782 @@
+@import "primereact/resources/themes/saga-blue/theme.css";
+@import "primereact/resources/primereact.min.css";
+@import "./global.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  #__next {
+    @apply flex flex-col min-h-screen;
+  }
+
+  /* div
+{
+  background: #D6E8F3;
+} */
+
+  /* .p-card-header {
+    background: #D6E8F3;
+    border-bottom: 4px solid #293889;
+    font-family: 'Muli';
+      font-size: 18px !important;
+      color: #293889;
+  } */
+
+  .p-disabled {
+    opacity: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: "Muli";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+  }
+
+  /* Hide image alt tags from appearing before images are loaded in Firefox {{{ */
+  img:-moz-loading {
+    @apply invisible;
+  }
+  img {
+    @apply text-transparent;
+  }
+  /* Hide image alt tags from appearing before images are loaded in Firefox }}} */
+
+  /* Loading Spinner {{{ */
+
+  .loading-spinner {
+    @apply inline-block w-20 h-20;
+  }
+  .loading-spinner:after {
+    @apply block w-16 h-16 m-2 animate-spin;
+    content: " ";
+    border-radius: 50%;
+    border: 6px solid black;
+    border-color: black transparent black transparent;
+  }
+
+  /* Loading Spinner }}} */
+}
+/* purgecss end ignore */
+
+/* @tailwind components; */
+
+@layer components {
+  /* Write your own custom component styles here */
+  .btn-blue {
+    @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
+  }
+  .login-btn {
+    color: #ffffff;
+
+    border: 1px solid #ffffff;
+
+    border-radius: 5px;
+
+    width: 100px;
+
+    height: 35px;
+
+    margin-left: 35px;
+
+    background: transparent 0% 0% no-repeat padding-box;
+
+    opacity: 1;
+  }
+  .vl {
+    height: 250px;
+    left: 194px;
+    opacity: 1;
+    top: 436px;
+    border-left: 3px solid #00b7da;
+    /* color: #00B7DA; */
+  }
+
+  .marginleft {
+    margin-left: 5px;
+  }
+
+  .borderRadius {
+    border-radius: 10px;
+  }
+
+  .outliner {
+    margin-top: 40px;
+    width: 623px;
+    padding: 35px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 1px 7px 9px #00000029;
+    border: 2px solid #293889;
+    opacity: 1;
+    border-radius: 10px;
+    height: auto;
+  }
+  .sider {
+    top: 65px !important;
+    width: 14rem !important;
+  }
+  .sider .p-sidebar-content {
+    padding-right: 0 !important;
+  }
+  @media screen and (max-width: 850px) {
+    .sider .p-sidebar-content {
+      padding-right: 1rem !important;
+    }
+  }
+
+  .text-blue-clr {
+    color: rgb(41, 56, 137);
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Muli;
+  }
+  .p-inputnumber-input {
+    flex: none !important;
+  }
+  #pwd-eye {
+    position: absolute;
+    margin-top: -2rem;
+    right: 4rem;
+  }
+  #old-pwd {
+    position: absolute;
+    margin-top: -2rem;
+    right: 4rem;
+  }
+  #clear-icon {
+    position: absolute;
+    margin-top: -2rem;
+    margin-left: 13rem;
+  }
+  #confirm-pwd {
+    position: absolute;
+    margin-top: -2rem;
+    right: 4rem;
+  }
+  @media screen and (max-width: 850px) {
+    .outliner {
+      border: none;
+      box-shadow: none;
+    }
+  }
+  @media screen and (max-width: 850px) {
+    #old-pwd {
+      right: 2rem;
+    }
+
+    #pwd-eye {
+      right: 2rem;
+    }
+
+    #confirm-pwd {
+      right: 2rem;
+    }
+  }
+  .grid {
+    display: grid;
+  }
+  .new-app {
+    border-left: 3px solid #293889;
+    padding-left: 8px;
+    background: #e6e6e6;
+    /* left: 49px; */
+    margin-left: -15px;
+    width: 223px;
+  }
+
+  .outliner-quote {
+    margin-top: 40px;
+    width: 690px;
+    padding-left: 30px;
+    padding-top: 35px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 1px 7px 9px #00000029;
+    border: 2px solid #293889;
+    opacity: 1;
+    border-radius: 10px;
+    height: auto;
+    padding-right: 29px;
+    padding-bottom: 30px;
+  }
+
+  @media screen and (max-width: 850px) {
+    .outliner-quote {
+      border: none;
+      box-shadow: none;
+      margin-top: 20px;
+      padding: 8px;
+      margin-left: 12px;
+    }
+  }
+  .left-align {
+    text-align: left;
+  }
+  .grey-background {
+    background-color: #f8f8f8;
+  }
+  .white-bg {
+    padding: 1rem;
+  }
+
+  .font-styling {
+    text-align: left;
+    font: normal normal 20px "Muli";
+    letter-spacing: 0px;
+    color: #293889;
+    opacity: 1;
+  }
+  .hl {
+    border: 1px solid #293889;
+    margin-bottom: 20px;
+    /* margin-top: 20px;
+    margin-right: 37px; */
+    opacity: 0.6;
+  }
+  .content-style {
+    width: 496px;
+    font: normal normal bold 35px "Muli";
+    text-align: left;
+    letter-spacing: 0px;
+    color: #293889;
+    opacity: 1;
+  }
+  .drpdwn {
+    width: 200px;
+  }
+  .p-inputtext {
+    border-radius: 5px;
+  }
+  .p-inputtext:enabled:hover {
+    border: 1px solid #0079b6;
+  }
+  .label {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .btns {
+    width: 260px;
+    background-color: #009dcb !important;
+    opacity: 1;
+  }
+  @media screen and (max-width: 850px) {
+    .btns {
+      width: 290px;
+    }
+  }
+  .recalc {
+    width: 95px;
+    height: 36px;
+    font: 5px;
+    background: #ffffff 0% 0% no-repeat padding-box !important;
+    box-shadow: 0px 1px 3px #00000029;
+    border: 1px solid #00b7da !important;
+    border-radius: 7px;
+    opacity: 1;
+    color: #00b7da !important;
+  }
+  .p-invalid {
+    border-color: #f44336 !important;
+    width: 250px;
+
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: none !important;
+    font: normal normal bold 20px "Muli";
+    letter-spacing: 0px;
+    color: #293889;
+    opacity: 1;
+  }
+  .radio-border {
+    border: 1px solid gray;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+
+  .amount {
+    width: 245px;
+    font: normal normal bold 15px "Muli";
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    letter-spacing: 0.99px;
+    color: #293889;
+    opacity: 1;
+    height: 41px;
+  }
+    .pr-amount {
+    width: 375px;
+    font: normal normal bold 15px "Muli";
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    letter-spacing: 0.99px;
+    color: #293889;
+    opacity: 1;
+    height: 41px;
+  }
+
+    @media screen and (max-width: 850px) {
+    .pr-amount {
+      width: 316px;
+    }
+  }
+  @media screen and (max-width: 850px) {
+    .amount {
+      width: 316px;
+    }
+  }
+  .pi-amount {
+    width: 245px;
+    font: normal normal bold 15px "Muli";
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    letter-spacing: 0.99px;
+    color: #293889;
+    opacity: 1;
+    height: 41px;
+  }
+
+  @media screen and (max-width: 850px) {
+    .pi-amount {
+      width: 326px;
+    }
+  }
+
+  .inputTextQuote {
+    width: 210px;
+    font: normal normal bold 20px "Muli";
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    border-radius: 5px;
+    border: 1px solid #707070;
+    letter-spacing: 0px;
+    color: #293889;
+    opacity: 1;
+  }
+  .question-card {
+    border-top: 8px solid #293889 !important;
+    width: 65em !important;
+    margin-left: 12em !important;
+    border: 1px solid #293889 !important;
+    border-top: 8px solid #293889 !important;
+  }
+  .withdraw {
+    width: 65em;
+    margin-left: 12em;
+  }
+  .p-dropdown {
+    position: inherit !important;
+  }
+  ul.p-tabview-nav {
+    margin-left: 1em;
+  }
+  .p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+    outline: none !important;
+    outline-offset: none !important;
+    box-shadow: none !important;
+  }
+  .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    background: #293889;
+  }
+  .p-tabview
+    .p-tabview-nav
+    li:not(.p-highlight):not(.p-disabled)
+    .p-tabview-nav-link {
+    color: #545454;
+    border: 1px solid #707070;
+  }
+  .p-datatable .p-datatable-thead > tr > th {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .card-layout {
+    width: 65em;
+    /* margin-left:12em; */
+    margin-bottom: 1em;
+  }
+
+  /* @media screen and (max-width: 850px){
+  .review-card{
+    width:65em !important;
+  }
+} */
+
+  /* @media screen and (min-width: 851px){ */
+
+  /* } */
+
+  .p-card {
+    background: #ffffff;
+    color: #495057;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+      0 1px 3px 0 rgb(0 0 0 / 12%);
+    border-radius: 6px;
+  }
+  .p-card .p-card-body {
+    margin-left: 0px;
+    padding: 1.25rem;
+    border: 1px solid #707070;
+  }
+
+  .p-component,
+  .p-component * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /* font-family: "Muli"; */
+  }
+  .p-radiobutton {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    vertical-align: bottom;
+  }
+  .icon-image {
+    width: 20px !important;
+    margin: 0 10px;
+  }
+  .sidebar-menu {
+    cursor: pointer;
+    text-align: left;
+    font: normal normal bold 16px/25px "Muli";
+    letter-spacing: 0px;
+    color: #293889;
+    opacity: 1;
+  }
+  .p-card .p-card-footer,
+  .p-card .p-card-content {
+    padding: 0 !important;
+  }
+  .interestRate {
+    color: #293889 !important;
+  }
+  .earn-style {
+    top: 190px;
+    left: 981px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal bold 30px "Muli";
+    letter-spacing: 0px;
+    color: #293889;
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 850px) {
+    .earn-style {
+      font: normal normal bold 18px "Muli";
+      opacity: 100%;
+    }
+  }
+
+  .indexedStep {
+    color: white;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    background-color: rgba(211, 211, 211, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .indexedStep.accomplished {
+    /* background-color: #293889; */
+    border: 10px solid #293889 !important;
+  }
+
+  /* .test {
+    position: absolute;
+    margin-top: -60px !important;
+    white-space: nowrap;
+  } */
+
+  .test {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 1px 7px 9px #00000029;
+    border: 2px solid #293889;
+    opacity: 1;
+    border-radius: 14px;
+  }
+  @media screen and (max-width: 850px) {
+    .test {
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  .RSPBprogressBar {
+    height: 5px !important;
+  }
+
+  .RSPBprogressBar .RSPBprogression {
+    background-color: #293889 !important;
+    height: 5px;
+  }
+  .bg-purple {
+    background: #293889 0% 0% no-repeat padding-box;
+    opacity: 1;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+  }
+  .text-purple {
+    background: #293889 0% 0% no-repeat padding-box;
+    opacity: 1;
+  }
+  .btncolor {
+    background-color: #009dcb !important;
+  }
+  .btn-cancel {
+    background-color: #ffffff !important;
+  }
+
+  .linkcolor {
+    color: #00b7da !important;
+  }
+  .bg-linkcolor {
+    background-color: #00b7da !important;
+    margin-top: 35px;
+  }
+  .p-radiobutton .p-radiobutton-box.p-highlight,
+  .p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled):hover {
+    border-color: #293889 !important;
+    background: #293889 !important;
+    z-index: 0 !important;
+  }
+  .p-radiobutton .p-radiobutton-box:not(.p-disabled):not(.p-highlight):hover {
+    border-color: #293889 !important;
+  }
+  .quotecolor {
+    color: #293889;
+  }
+  .prim-beneficiary {
+    font: normal normal bold 20px Muli;
+    color: #293889;
+    background: #d6e8f3 0% 0% no-repeat padding-box;
+    border-radius: 8px 8px 0px 0px;
+    border: 1px solid #707070;
+  }
+
+  .linkcolorgrey {
+    color: #7b7b7b !important;
+  }
+
+  .main {
+    font: "Muli";
+  }
+  .h-suitability {
+    text-align: left;
+    font: "Muli";
+    letter-spacing: 0px;
+    color: #293889;
+    opacity: 1;
+  }
+
+  .h-question {
+    top: 316px;
+    left: 297px;
+
+    height: 50px;
+    text-align: left;
+    font: "Muli";
+    letter-spacing: 0px;
+    color: #1f222a;
+    opacity: 1;
+  }
+  .quote-display {
+    background: #293889 0% 0% no-repeat padding-box;
+  }
+  .mobilebars {
+    border: none !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+    background: #293889 0% 0% no-repeat padding-box !important;
+    width: 2.357rem;
+    padding: 0.5rem 0;
+  }
+
+  .premium {
+    background: #293889 !important;
+    border: none !important;
+    color: #ffffff !important;
+  }
+   .manage-card{
+ width: 65em !important;
+    margin-left: 12em !important;
+    border: 1px solid #293889 !important;
+  }
+
+  .money {
+    background: #f8f8f8 0% 0% no-repeat padding-box !important;
+    border: 1px solid #a5a5a5 !important;
+    border-radius: 2px !important;
+    opacity: 1 !important;
+    height: 45px !important;
+    width: 207px !important;
+    font: normal normal 700 20px Muli !important;
+    color: #293889 !important;
+  }
+  @media screen and (max-width: 850px) {
+    .money {
+      background: #f8f8f8 0% 0% no-repeat padding-box !important;
+      border: 1px solid #a5a5a5 !important;
+      border-radius: 2px !important;
+      opacity: 1 !important;
+      height: 42px !important;
+      width: 180px !important;
+      font: normal normal 700 19px Muli !important;
+      color: #293889 !important;
+    }
+  }
+
+  .bg-fill {
+    background: #293889 0% 0% no-repeat padding-box;
+    opacity: 1;
+    width: 100%;
+  }
+  .product-bg-fill {
+    background: #293889 0% 0% no-repeat padding-box;
+    opacity: 1;
+    width: 100%;
+  }
+
+  .step1 {
+    background: #d6e8f3 0% 0% no-repeat padding-box;
+    color: #293889;
+    border-bottom: 3px solid #293889 !important;
+  }
+  .step2 {
+    background: #d6e8f3 0% 0% no-repeat padding-box;
+    color: #293889;
+  }
+  .btn-interest {
+    background: #ffffff 0% 0% no-repeat padding-box !important;
+    color: #009dcb !important;
+  }
+
+  .h-policies {
+    text-align: left;
+    font: "Muli";
+    letter-spacing: 0px;
+    color: #545454;
+    opacity: 1;
+  }
+  .policy-display {
+    background: #f8f8f8 0% 0% no-repeat padding-box;
+    border: 0.5px solid #828282;
+    opacity: 1;
+    /* width: 1000px; */
+  }
+
+  .my-policies {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    /* border-left: 1px solid #BCBCBC;
+  border-right: 1px solid #BCBCBC;
+  border-bottom: 1px solid #BCBCBC; */
+    opacity: 1;
+  }
+
+  .p-tabview-nav-link-myapplication {
+    font-family: "Muli";
+    background: #ffffff;
+  }
+
+  .tabview-panel-border {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #bcbcbc;
+    opacity: 1;
+  }
+  .panel-bg {
+    background: #d6e8f3 !important;
+  }
+  .transaction-bg {
+    background: #ffffff !important;
+  }
+  .tag-list {
+    background: transparent !important;
+    border: 1px solid #f59e0b !important;
+    color: #f59e0b !important;
+  }
+
+  .help {
+    background: #f5f5f5 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 0px #67676729;
+    opacity: 0.8;
+    color: #dfa400;
+  }
+
+  /* #my-policies > .p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled) .p-tabview-nav-link{
+  color:#545454 !important;
+  border: 1px solid #707070 !important;
+  background: #BCBCBC;
+} */
+}
+
+/* @tailwind utilities; */
+
+/* Your own custom utilities */
+
+@layer utilities {
+  .p-card-header {
+    background: #d6e8f3;
+    border-bottom: 4px solid #293889;
+    font-family: "Muli";
+    font-size: 18px !important;
+    color: #293889;
+  }
+  @media screen and (max-width: 850px) {
+    .p-card-header {
+      border-bottom: none !important;
+    }
+  }
+
+  @responsive {
+    .boxes {
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border-bottom: 1px solid #707070;
+      border-top: 4px solid #293889;
+      opacity: 1;
+    }
+
+    .box-left-right {
+      border-left: 2px solid #707070;
+      border-right: 2px solid #707070;
+    }
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: "Muli" !important;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: "Muli" !important;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+.p-component {
+  font-family: "Muli" !important;
+}
